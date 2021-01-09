@@ -1,0 +1,1 @@
+This is the Rate Repository App assignment from the Full Stack Open coursework.

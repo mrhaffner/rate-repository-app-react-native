@@ -18,7 +18,14 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
     padding: 7,
     borderRadius: 4,
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    overflow: 'hidden',
+  },
+  marginText: {
+    marginBottom: 5,
+  },
+  viewWidth: {
+    maxWidth: '80%'
   },
 });
 
@@ -30,10 +37,10 @@ const RepositoryItemInfo = ({ item }) => (
                 uri: item.ownerAvatarUrl,
             }}
         />
-        <View>
-            <Text fontSize="subheading" fontWeight='bold'>{item.fullName}</Text>
-            <Text>{item.description}</Text>
-            <Text color='white' style={styles.language}>{item.language}</Text>
+        <View style={styles.viewWidth}>
+            <Text fontSize="subheading" fontWeight='bold' style={styles.marginText}>{item.fullName}</Text>
+            <Text style={styles.marginText}>{item.description}</Text>
+            <Text color='white' style={[styles.language, styles.marginText]}>{item.language}</Text>
         </View>
     </View>
 );

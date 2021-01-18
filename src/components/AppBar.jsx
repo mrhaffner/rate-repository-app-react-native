@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.navigation,
     padding: theme.defaultPadding.padding,
     paddingTop: Constants.statusBarHeight,
-
   },
 });
 

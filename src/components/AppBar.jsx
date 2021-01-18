@@ -6,13 +6,11 @@ import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: theme.colors.navigation,
+    padding: theme.defaultPadding.padding,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: theme.backGroundColors.navigation
+
   },
-//   text: {
-//     fontWeight: 'bold',
-//     color: 'white'
-//   }
 });
 
 const AppBar = () => {

@@ -26,7 +26,6 @@ const Main = () => {
         <Route path="/" exact>
           <RepositoryList />
         </Route>
-
         <Redirect to="/" />
       </Switch>
     </View>

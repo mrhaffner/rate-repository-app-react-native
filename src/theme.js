@@ -6,6 +6,7 @@ const theme = {
       secondary: '#e1e4e8',
       white: 'white',
       navigation: '#24292e',
+      error: '#d73a4a',
     },
     fontSizes: {
       body: 14,

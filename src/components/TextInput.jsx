@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         borderWidth: 1,
         fontSize: theme.fontSizes.subheading,
-        marginBottom: 10,
+        marginBottom: 5,
+        marginTop: 5,
     }
 });
 

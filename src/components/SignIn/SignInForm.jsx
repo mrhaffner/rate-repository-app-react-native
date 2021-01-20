@@ -1,9 +1,9 @@
 import React from 'react';
-import FormikTextInput from './FormikTextInput';
+import FormikTextInput from '../FormikTextInput';
 import { TouchableWithoutFeedback, View } from 'react-native';
-import Text from './Text';
+import Text from '../Text';
 import { StyleSheet } from 'react-native';
-import theme from '../theme';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
     container: {

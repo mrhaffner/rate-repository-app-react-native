@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
-import theme from '../theme';
+import theme from '../../theme';
 import { Link } from "react-router-native";
 
 const styles = StyleSheet.create({

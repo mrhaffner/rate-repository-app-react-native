@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   viewWidth: {
-    maxWidth: '80%'
+    maxWidth: 330
   },
 });
 

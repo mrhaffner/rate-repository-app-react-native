@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
   flexContainer: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    maxWidth: 400,
   },
   text: {
     marginTop: 5,

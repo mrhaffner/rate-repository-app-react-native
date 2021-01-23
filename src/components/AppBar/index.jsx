@@ -4,6 +4,11 @@ import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
 import theme from '../../theme';
 import { Link } from "react-router-native";
+import useUser from '../../hooks/useUser';
+import { useContext } from 'react';
+import { useApolloClient } from '@apollo/client';
+
+import AuthStorageContext from '../../contexts/AuthStorageContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,15 +23,35 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  const { user } = useUser();
+  const authStorage = useContext(AuthStorageContext);
+  const apolloClient = useApolloClient();
+
+  const handleClick = async () => {
+    await authStorage.removeAccessToken();
+    apolloClient.resetStore();
+  };
+
+  const signInOut = () => {
+    if (user) {
+      return (
+        <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
+      );
+    }
+    return (
+      <Link to="/sign-in" component={TouchableOpacity} activeOpacity={0.8} >
+        <AppBarTab>Sign In</AppBarTab>
+      </Link>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal style={styles.scrollContainer}>
           <Link to="/" component={TouchableOpacity} activeOpacity={0.8} >
             <AppBarTab>Repositories</AppBarTab>
           </Link>
-          <Link to="/sign-in" component={TouchableOpacity} activeOpacity={0.8} >
-            <AppBarTab>Sign In</AppBarTab>
-          </Link>
+          {signInOut()}
       </ScrollView>
     </View>
   );

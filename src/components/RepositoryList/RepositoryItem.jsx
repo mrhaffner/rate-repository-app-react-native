@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import RepositoryItemStats from './RepositoryItemStats';
 import RepositoryItemInfo from './RepositoryItemInfo';
+import RepositoryItemBtn from './RepositoryItemBtn';
 import theme from '../../theme';
 
 const styles = StyleSheet.create({
@@ -15,6 +16,9 @@ const RepositoryItem = ({ item }) => (
   <View style={styles.container}>
     <RepositoryItemInfo item={item} />
     <RepositoryItemStats item={item} />
+    {item && 
+      <RepositoryItemBtn item={item} />
+    }
   </View>
 );
 

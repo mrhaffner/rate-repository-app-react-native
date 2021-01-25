@@ -31,15 +31,15 @@ const RepositoryItemBtn = ({ item }) => {
 
     const handlePress = () => {
         //history.push("/");
-        console.log('hi');
+        console.log(item.url);
     };
+
     return (
         <View style={styles.flexContainer}>
             <TouchableOpacity style={styles.button} activeOpacity={0.8}>
                 <Text color='white' fontWeight='bold' onPress={handlePress} >Open in GitHub</Text>
             </TouchableOpacity>
         </View>
-
     );
 };
 

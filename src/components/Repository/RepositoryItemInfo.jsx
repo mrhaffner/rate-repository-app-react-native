@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },  
   logo: {
-      width: 50,
-      height: 50,
-      borderRadius: 3,
-      marginRight: 12,
+    width: 50,
+    height: 50,
+    borderRadius: 3,
+    marginRight: 12,
   },
   language: {
     backgroundColor: theme.colors.primary,

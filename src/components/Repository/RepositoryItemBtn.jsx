@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import Text from '../Text';
 import theme from '../../theme';
-//import { useHistory } from 'react-router-native';
+import * as Linking from 'expo-linking';
 
 const styles = StyleSheet.create({
   flexContainer: {
@@ -27,11 +27,9 @@ const styles = StyleSheet.create({
 });
 
 const RepositoryItemBtn = ({ item }) => {
-    //let history = useHistory();
 
     const handlePress = () => {
-        //history.push("/");
-        console.log(item.url);
+        Linking.openURL(item.url);
     };
 
     return (

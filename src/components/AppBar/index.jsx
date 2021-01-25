@@ -35,7 +35,9 @@ const AppBar = () => {
   const signInOut = () => {
     if (user) {
       return (
-        <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
+        <TouchableOpacity activeOpacity={0.8} >
+          <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
+        </TouchableOpacity>
       );
     }
     return (

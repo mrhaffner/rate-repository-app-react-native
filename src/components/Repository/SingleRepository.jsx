@@ -5,6 +5,7 @@ import ItemSeparator from './ItemSeparator';
 import { FlatList, StyleSheet, View } from 'react-native';
 import useRepository from '../../hooks/useRepository';
 import { useParams } from 'react-router-native';
+import Text from '../Text';
 
 const styles = StyleSheet.create({
     margin: {
@@ -14,10 +15,14 @@ const styles = StyleSheet.create({
 
 const SingleRepository = () => {
     let { id } = useParams();
-    const { repository } = useRepository(id);
+    const { repository, loading } = useRepository(id);
     const reviews = repository
     ? repository.reviews.edges.map(edge => edge.node)
     : [];
+
+    if (loading) {
+        return <Text>Loading...</Text>;
+    }
 
     return (
         <FlatList

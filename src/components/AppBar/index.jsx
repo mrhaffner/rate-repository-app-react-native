@@ -32,18 +32,28 @@ const AppBar = () => {
     apolloClient.resetStore();
   };
 
-  const signInOut = () => {
+  const loggedOrNot = () => {
     if (user) {
       return (
-        <TouchableOpacity activeOpacity={0.8} >
-          <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
-        </TouchableOpacity>
+        <>
+          <Link to="/review" component={TouchableOpacity} activeOpacity={0.8} >
+            <AppBarTab>Create a Review</AppBarTab>
+          </Link>
+          <TouchableOpacity activeOpacity={0.8} >
+            <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
+          </TouchableOpacity>
+        </>
       );
     }
     return (
-      <Link to="/sign-in" component={TouchableOpacity} activeOpacity={0.8} >
-        <AppBarTab>Sign In</AppBarTab>
-      </Link>
+      <>
+        <Link to="/sign-in" component={TouchableOpacity} activeOpacity={0.8} >
+          <AppBarTab>Sign In</AppBarTab>
+        </Link>
+        <Link to="/sign-up" component={TouchableOpacity} activeOpacity={0.8} >
+          <AppBarTab>Sign Up</AppBarTab>
+        </Link>
+      </>
     );
   };
 
@@ -53,7 +63,7 @@ const AppBar = () => {
           <Link to="/" component={TouchableOpacity} activeOpacity={0.8} >
             <AppBarTab>Repositories</AppBarTab>
           </Link>
-          {signInOut()}
+          {loggedOrNot()}
       </ScrollView>
     </View>
   );

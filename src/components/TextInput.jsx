@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
     }
 });
 
-const TextInput = ({ style, error, ...props }) => {
+//const TextInput = ({ style, error, ...props }) => {
+const TextInput = ({ ...props }) => {
+
   //const textInputStyle = [style];
 
   return <NativeTextInput style={styles.input} {...props} />;

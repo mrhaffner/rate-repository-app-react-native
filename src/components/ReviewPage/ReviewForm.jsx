@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
 const ReviewForm = ({ onSubmit }) => {
     return (
         <View style={styles.container}>
-            <FormikTextInput name="repositoryName" placeholder="Repository owner name" />
-            <FormikTextInput name="ownerName" placeholder="Repository name" />
+            <FormikTextInput name="ownerName" placeholder="Repository owner name" />
+            <FormikTextInput name="repositoryName" placeholder="Repository name" />
             {/* Does this neep a numberinput or something? */}
-            <FormikTextInput name="rating" placeholder="Rating between 0 and 100" type="number" />
+            <FormikTextInput name="rating" placeholder="Rating between 0 and 100" keyboardType = 'numeric' />
             {/* Does this need to be multiple lines somehow? */}
-            <FormikTextInput name="text" placeholder="Review" />
+            <FormikTextInput name="text" placeholder="Review" multiline={true} />
             <TouchableWithoutFeedback onPress={onSubmit}>
                 <Text color="white" fontSize="subheading" fontWeight="bold" style={styles.button}>Create Review</Text>
             </TouchableWithoutFeedback>

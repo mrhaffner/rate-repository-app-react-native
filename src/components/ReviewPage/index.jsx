@@ -33,9 +33,8 @@ const ReviewPage = () => {
         const { repositoryName, ownerName, rating, text } = values;
     
         try {
-            const { data } = await addReview({ repositoryName, ownerName, rating, text });
-            console.log("data ReviewPage:", data);
-            history.push(`/${data.repositoryId}`); //link to single repository you reviewed?
+            const { createReview } = await addReview({ repositoryName, ownerName, rating, text });
+            history.push(`/${createReview.repositoryId}`); //link to single repository you reviewed?
         } catch (e) {
             console.log(e);
         }

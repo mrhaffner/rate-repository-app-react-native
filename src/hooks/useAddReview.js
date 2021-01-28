@@ -5,9 +5,9 @@ const useAddReview = () => {
     const [mutate, result] = useMutation(ADD_REVIEW);
   
     const addReview = async ({ repositoryName, ownerName, rating, text }) => {
-        const review = { repositoryName, ownerName, rating, text };
+        const review = { repositoryName, ownerName, rating: parseInt(rating), text };
         const { data } = await mutate({ variables: { review } });
-        console.log("useAddReview:", data);
+        console.log(data);
         return data;
     };
   

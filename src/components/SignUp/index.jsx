@@ -25,15 +25,14 @@ const SignUp = () => {
     const [signUp] = useSignUp();
     const [signIn] = useSignIn();
 
-    const onSubmit = async (values) => { //confirmation field?
-        const { username, password } = values; //is this right, do you need the confrimation pass?
+    const onSubmit = async (values) => {
+        const { username, password } = values;
     
         try {
-            const { data } = await signUp({ username, password }); //confirmation field?
+            const { data } = await signUp({ username, password });
             console.log("signUp data:", data);
-            const { signInData } = await signIn({ username, password }); //this right?
+            const { signInData } = await signIn({ username, password });
             console.log("signUp signInData:", signInData);
-            //log in the user
             history.push("/"); //is this okay?
         } catch (e) {
             console.log(e);
@@ -42,6 +41,7 @@ const SignUp = () => {
     const initialValues = { //confirmation field?
         username: '',
         password: '',
+        confirmPassword: '',
     };
     return (
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>

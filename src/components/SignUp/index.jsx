@@ -18,6 +18,12 @@ const validationSchema = yup.object().shape({ //is this okay?
         .max(16, 'Password must not be longer than 16 characters')
         .required('Password is required'),
         //confirmation field? needs to be the same as password
+    confirmPassword: yup
+    .string()
+    .min(6, 'Password must have a length of at least 6')
+    .max(16, 'Password must not be longer than 16 characters')
+    .oneOf([yup.ref('password'), null], "Passwords must match")
+    .required('Password confirmation is required'),
 });
 
 const SignUp = () => {

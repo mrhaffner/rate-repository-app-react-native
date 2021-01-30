@@ -1,18 +1,17 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import Text from '../Text';
-import theme from '../../theme';
 import useDeleteReview from '../../hooks/useDeleteReview';
 
 const styles = StyleSheet.create({ 
   button: {
-    backgroundColor: theme.colors.primary,
+    backgroundColor: 'red',
     padding: 11,
     borderRadius: 4,
     alignSelf: 'flex-start',
     overflow: 'hidden',
     width: '100%',
-    maxWidth: 400,
+    maxWidth: 200,
     marginTop: 5,
     alignItems: 'center',
   },

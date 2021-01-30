@@ -12,8 +12,9 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     overflow: 'hidden',
     width: '100%',
-    maxWidth: 400,
+    maxWidth: 200,
     marginTop: 5,
+    marginRight: 15,
     alignItems: 'center',
   },
 });

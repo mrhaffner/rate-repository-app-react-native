@@ -39,6 +39,9 @@ const AppBar = () => {
           <Link to="/review" component={TouchableOpacity} activeOpacity={0.8} >
             <AppBarTab>Create a Review</AppBarTab>
           </Link>
+          <Link to="/my-reviews" component={TouchableOpacity} activeOpacity={0.8} >
+            <AppBarTab>My Reviews</AppBarTab>
+          </Link>
           <TouchableOpacity activeOpacity={0.8} >
             <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
           </TouchableOpacity>

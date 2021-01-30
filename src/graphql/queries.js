@@ -77,10 +77,39 @@ export const GET_REPOSITORY = gql`
     }
 `;
 
+// export const GET_USER = gql`
+//     query {
+//         authorizedUser {
+//             username
+//         }
+//     }
+// `;
+
 export const GET_USER = gql`
-    query {
+    query getAuthorizedUser($includeReviews: Boolean = false) {
         authorizedUser {
             username
+            reviews @include(if: $includeReviews) {
+                edges {
+                    node {
+                        id
+                        text
+                        rating
+                        createdAt
+                        user {
+                            id
+                            username
+                        }
+                    }
+                    cursor
+                }
+                pageInfo {
+                    endCursor
+                    startCursor
+                    totalCount
+                    hasNextPage
+                }
+            }
         }
     }
 `;

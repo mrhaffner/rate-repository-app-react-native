@@ -15,10 +15,14 @@ const styles = StyleSheet.create({
 
 const SingleRepository = () => {
     let { id } = useParams();
-    const { repository, loading } = useRepository(id);
+    const { repository, loading, fetchMore } = useRepository({id, first: 8});
     const reviews = repository
     ? repository.reviews.edges.map(edge => edge.node)
     : [];
+
+    const onEndReach = () => {
+        fetchMore();
+      };
 
     if (loading) {
         return <Text>Loading...</Text>;
@@ -27,6 +31,8 @@ const SingleRepository = () => {
     return (
         <FlatList
             data={reviews}
+            onEndReached={onEndReach}
+            onEndReachedThreshold={0.5}
             renderItem={({ item }) => <ReviewItem review={item} />}
             keyExtractor={({ id }) => id}
             ListHeaderComponent={() => 

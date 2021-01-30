@@ -1,15 +1,16 @@
 import React from 'react';
 import RNPickerSelect from 'react-native-picker-select';
 import { StyleSheet, View, Platform } from 'react-native';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
     container: {
-        padding: Platform.select({
+        margin: Platform.select({
             android: 5,
-            ios: 10,
-            default: 10,
+            ios: 11,
+            default: 11,
         }),
-    },  
+    },
 });
 
 const RepositoryListDropdown = ({setListOrder}) => {

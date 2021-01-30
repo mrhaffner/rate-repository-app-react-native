@@ -60,8 +60,8 @@ export const GET_REPOSITORY = gql`
                         rating
                         createdAt
                         user {
-                            id
                             username
+                            id
                         }
                     }
                     cursor
@@ -100,6 +100,7 @@ export const GET_USER = gql`
                             id
                             username
                         }
+                        repositoryId
                     }
                     cursor
                 }

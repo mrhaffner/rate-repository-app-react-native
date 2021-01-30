@@ -3,6 +3,8 @@ import { View, StyleSheet } from 'react-native';
 import Text from '../Text';
 import theme from '../../theme';
 import { format } from 'date-fns';
+import ViewRepositoryBtn from './ViewRepositoryBtn';
+// import DeleteReviewBtn from './DeleteReviewBtn';
 
 const styles = StyleSheet.create({
     container: {
@@ -44,6 +46,12 @@ const ReviewItem = ({ review }) =>  (
             <Text color='textSecondary' style={styles.marginText}>{format(new Date(review.createdAt), 'MM.dd.yyyy')}</Text>
             <Text style={styles.marginText}>{review.text}</Text>
         </View>
+        {review.user.id && 
+            <View>
+                <ViewRepositoryBtn id={review.repositoryId} />
+                {/* <DeleteReviewBtn /> */}
+            </View>
+        }
     </View>
 );
 

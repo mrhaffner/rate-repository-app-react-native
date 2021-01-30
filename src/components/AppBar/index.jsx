@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
 import theme from '../../theme';
-import { Link } from "react-router-native";
+import { Link } from 'react-router-native';
 import useUser from '../../hooks/useUser';
 import { useContext } from 'react';
 import { useApolloClient } from '@apollo/client';

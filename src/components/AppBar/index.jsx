@@ -7,7 +7,7 @@ import { Link } from 'react-router-native';
 import useUser from '../../hooks/useUser';
 import { useContext } from 'react';
 import { useApolloClient } from '@apollo/client';
-
+import { useHistory } from 'react-router-native';
 import AuthStorageContext from '../../contexts/AuthStorageContext';
 
 const styles = StyleSheet.create({
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  let history = useHistory();
   const { user } = useUser();
   const authStorage = useContext(AuthStorageContext);
   const apolloClient = useApolloClient();
@@ -30,6 +31,7 @@ const AppBar = () => {
   const handleClick = async () => {
     await authStorage.removeAccessToken();
     apolloClient.resetStore();
+    history.push("/");
   };
 
   const loggedOrNot = () => {
@@ -43,7 +45,7 @@ const AppBar = () => {
             <AppBarTab>My Reviews</AppBarTab>
           </Link>
           <TouchableOpacity activeOpacity={0.8} >
-            <AppBarTab onClick={handleClick}>Sign Out</AppBarTab>
+            <AppBarTab onPress={handleClick}>Sign Out</AppBarTab>
           </TouchableOpacity>
         </>
       );

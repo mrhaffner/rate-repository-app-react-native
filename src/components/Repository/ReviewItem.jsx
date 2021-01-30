@@ -18,16 +18,12 @@ const styles = StyleSheet.create({
     rating: {
         width: 44,
         height: 44,
-        
         borderRadius: 22,
         borderColor: theme.colors.primary,
         borderWidth: 2,
         marginRight: 12,
         alignItems: 'center',
-        justifyContent: 'center'
-    },
-    ratingText: {
-        lineHeight: 0,
+        justifyContent: 'center',
     },
     marginText: {
         marginBottom: 5,
@@ -45,7 +41,7 @@ const ReviewItem = ({ review, refetch }) =>  (
     <View style={styles.container}>
         <View style={styles.flexContainer}>
             <View style={styles.rating}>
-                <Text fontSize="subheading" fontWeight='bold' color='primary' style={styles.ratingText}>{review.rating}</Text>
+                <Text fontSize="subheading" fontWeight='bold' color='primary'>{review.rating}</Text>
             </View>
             
             <View style={styles.viewWidth}>

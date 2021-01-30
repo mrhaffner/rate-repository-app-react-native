@@ -1,7 +1,6 @@
 import React from 'react';
 import RNPickerSelect from 'react-native-picker-select';
 import { StyleSheet, View, Platform } from 'react-native';
-import theme from '../../theme';
 
 const styles = StyleSheet.create({
     container: {

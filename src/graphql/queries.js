@@ -77,14 +77,6 @@ export const GET_REPOSITORY = gql`
     }
 `;
 
-// export const GET_USER = gql`
-//     query {
-//         authorizedUser {
-//             username
-//         }
-//     }
-// `;
-
 export const GET_USER = gql`
     query getAuthorizedUser($includeReviews: Boolean = false) {
         authorizedUser {

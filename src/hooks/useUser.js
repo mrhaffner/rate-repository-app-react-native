@@ -3,13 +3,13 @@ import { GET_USER } from '../graphql/queries';
 
 const useUser = (variables) => {
 
-    const { data, error, loading } =  useQuery(GET_USER, {
+    const { data, error, loading, refetch } =  useQuery(GET_USER, {
       fetchPolicy: 'cache-and-network',
       variables
     });
     const user = loading ? undefined : data.authorizedUser;
 
-  return { user, loading, error };
+  return { user, loading, error, refetch };
 };
 
 export default useUser;

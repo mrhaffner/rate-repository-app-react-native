@@ -7,7 +7,7 @@ import Text from '../Text';
 
 const MyReviews = () => {
     // const { authorizedUser, loading, fetchMore } = useUser({first: 8, includeReviews: true});
-    const { user, loading } = useUser({includeReviews: true});
+    const { user, loading, refetch } = useUser({includeReviews: true});
     const reviews = user
     ? user.reviews.edges.map(edge => edge.node)
     : [];
@@ -19,7 +19,7 @@ const MyReviews = () => {
     return (
         <FlatList
             data={reviews}
-            renderItem={({ item }) => <ReviewItem review={item} />}
+            renderItem={({ item }) => <ReviewItem review={item} refetch={refetch} />}
             keyExtractor={item => item.id}
             ItemSeparatorComponent={ItemSeparator}
         />

@@ -4,7 +4,7 @@ import Text from '../Text';
 import theme from '../../theme';
 import { format } from 'date-fns';
 import ViewRepositoryBtn from './ViewRepositoryBtn';
-// import DeleteReviewBtn from './DeleteReviewBtn';
+import DeleteReviewBtn from './DeleteReviewBtn';
 
 const styles = StyleSheet.create({
     container: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const ReviewItem = ({ review }) =>  (
+const ReviewItem = ({ review, refetch }) =>  (
     <View style={styles.container}>
         <View style={styles.rating}>
             <Text fontSize="subheading" fontWeight='bold' color='primary' style={styles.ratingText}>{review.rating}</Text>
@@ -46,10 +46,10 @@ const ReviewItem = ({ review }) =>  (
             <Text color='textSecondary' style={styles.marginText}>{format(new Date(review.createdAt), 'MM.dd.yyyy')}</Text>
             <Text style={styles.marginText}>{review.text}</Text>
         </View>
-        {review.user.id && 
+        {review.repositoryId && 
             <View>
                 <ViewRepositoryBtn id={review.repositoryId} />
-                {/* <DeleteReviewBtn /> */}
+                <DeleteReviewBtn id={review.id} refetch={refetch} />
             </View>
         }
     </View>
